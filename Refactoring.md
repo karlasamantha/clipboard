@@ -9,3 +9,5 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+
+I chose a basic refactor, starting by removing the nested `if` checks for event and `partitionKey` property. Added a function to generate a hash from the event object, this way it was possible to remove the nested check for candidate also. This new function could be refactored also to take into account if the event is a string, this way the reuse of the same pattern to generate a hash on line 22 could be avoid. By simply removing the nested `if` increases readability for the code, as it makes it clearer to understand the purpose of the function.
